@@ -1,9 +1,29 @@
+:root {
+    --bg-page: #f8facf;
+    --button: #b796ee;
+    --button-hover: #88b7e2;
+    --secondary-background: #fcc2f0;
+    --text-main: #414141;
+    --border: #ccd8e7;
+    --shadow-soft: 0 10px 25px -5px rgba(15, 23, 42, 0.06),
+        0 4px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+
 .chewy-regular {
     font-family: "Chewy", system-ui;
     font-weight: 400;
     font-style: normal;
 }
 
-h1{
+h1 {
     font-family: "Chewy";
+}
+
+button {
+    font-family: "Montserrat Alternates";
+}
+
+input {
+    font-family: "Montserrat Alternates";
 }
