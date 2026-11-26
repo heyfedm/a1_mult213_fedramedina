@@ -1,7 +1,7 @@
 :root {
-    --bg-page: #f8facf;
-    --button: #b796ee;
-    --button-hover: #88b7e2;
+    --bg-page: #d3f3ff;
+    --button: #a97cf0;
+    --button-hover: #ec8fdf;
     --secondary-background: #fcc2f0;
     --text-main: #414141;
     --border: #ccd8e7;
@@ -9,6 +9,11 @@
         0 4px 10px -6px rgba(15, 23, 42, 0.04);
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 .chewy-regular {
     font-family: "Chewy", system-ui;
@@ -16,8 +21,11 @@
     font-style: normal;
 }
 
-h1 {
+header h1 {
     font-family: "Chewy";
+    font-size: 2.5rem;
+    color: #529ee4;
+    margin-bottom: 2rem;
 }
 
 button {
@@ -26,4 +34,111 @@ button {
 
 input {
     font-family: "Montserrat Alternates";
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px 40px;
+}
+
+header {
+    width: 100%;
+    max-width: 680px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+#ingredientInput {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 2px solid #b796ee;
+    border-radius: 20px;
+    padding: 6px 6px 6px 24px;
+    box-shadow: var(--shadow-soft);
+    transition: border-color 0.2s ease, box-shadow 0.2 ease;
+}
+
+.searchbox button {
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    padding: 0 22px;
+    height: 30px;
+    margin: 20px;
+    background-color: var(--button);
+    color: #ffffff;
+
+}
+
+#searchbutton:hover {
+    background-color: var(--button-hover);
+}
+
+#randombutton:hover {
+    background-color: var(--button-hover);
+}
+
+main {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.instructionscont:not(:empty) {
+    background-color: #efe3e3;
+    border: 1px solid var(--button);
+    border-radius: 15px;
+    padding: 25px 30px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 1rem;
+}
+
+.listgrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, mimax(260px, 1fr));
+    gap: 20px;
+}
+
+.listgrid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mobile version */
+@media (max-width: 640px) {
+    body {
+        padding: 36px 16px 32px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .searchbox button {
+        flex: 1;
+        height: 35px;
+        padding: 0 14px;
+        font-size: 0.8rem;
+    }
+
+    .listgrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 }
