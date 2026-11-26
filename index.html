@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder - Hey Fed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Finder by Hey Fed</h1>
+        <div class="searchbox">
+            <input type="text" id="ingredientInput" placeholder="Enter an Ingredient" aria-label="Enter an Ingredient">
+            <button id="searchbutton">Search</button>
+            <button id="randombutton" class="random">Suprise Me!</button>
+        </div>
+    </header>
+
+<main>
+    <div id="errormessage" class="error"></div>
+
+    <!--Ingredients and intructions-->
+    <div id="intructions" class="intructionscont"></div>
+
+    <!--grid for the results-->
+    <div id="list" class="listgrid"></div>
+</main>
+
+    <script src="app.js"></script>
+</body>
+</html>
