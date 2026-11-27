@@ -65,8 +65,7 @@ table, tr, td {
 }
 
 th {
-    background-color: #7ca8d0;
-    color: #ffffff;
+    color: #454545;
     border: #ec8fdf;
 }
 
@@ -168,6 +167,125 @@ main:has(.food-button){
     flex-direction: column;
     align-items: flex-start;
 }
+
+main:has(.food-image) {
+    max-width: 900px !important;
+    margin: 30px auto !important;
+    padding: 35px 40px !important;
+    background-color: #f5ebe6 !important;
+    border-radius: 22px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12) !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-areas:
+        "title title"
+        "category origin"
+        "image label"
+        "image table"
+        "instructions instructions" !important;
+    column-gap: 35px !important;
+    row-gap: 12px !important;
+    align-items: start !important;
+    position: relative !important;
+}
+
+main:has(.food-image) * {
+    position: static !important;
+    float: none !important;
+}
+
+#recipe-table {
+    display: contents !important;
+}
+
+main:has(.food-image) .food-title {
+    grid-area: title !important;
+    margin: 0 !important;
+    font-size: 2rem !important;
+    text-align: left !important;
+    text-transform: uppercase;
+}
+
+main:has(.food-image) h2:not(.food-origin) {
+    grid-area: category !important;
+    margin: 0 0 15px 0 !important;
+    font-size: 1.1rem !important;
+    text-align: left !important;
+}
+
+main:has(.food-image) .food-origin {
+    grid-area: origin !important;
+    margin: 0 0 15px 0 !important;
+    font-size: 1.1rem !important;
+    text-align: right !important;
+}
+
+main:has(.food-image) .food-image {
+    grid-area: image !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+}
+
+main:has(.food-image) h3:not(#instructions) {
+    grid-area: label !important;
+    margin: 0 !important;
+    font-size: 1.2rem !important;
+    text-align: left !important;
+}
+
+main:has(.food-image) table {
+    grid-area: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    background-color: transparent !important;
+    font-size: 0.95rem !important;
+}
+
+main:has(.food-image) th,
+main:has(.food-image) td {
+    text-align: left !important;
+    padding: 6px 8px !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+main:has(.food-image) #instructions {
+    grid-area: instructions !important;
+    width: 100% !important;
+    margin-top: 25px !important;
+    padding-top: 20px !important;
+    border-top: 2px dashed rgba(0, 0, 0, 0.2) !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.65 !important;
+    text-align: left !important;
+}
+
+/* Responsivo para móvil */
+@media (max-width: 768px) {
+    main:has(.food-image) {
+        margin: 15px !important;
+        padding: 22px !important;
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            "title"
+            "category"
+            "origin"
+            "image"
+            "label"
+            "table"
+            "instructions" !important;
+    }
+
+    main:has(.food-image) .food-origin {
+        text-align: left !important;
+    }
+}
+
 
 /*Tablet version */
 @media (max-width: 990px){
